@@ -1,0 +1,28 @@
+<openIdConnectAuthentication>
+  <id>-ca5a26b:191c2cd918c:-7ff7</id>
+  <name>curve02-openid-connect</name>
+  <className>org.geoserver.security.oauth2.OpenIdConnectAuthenticationFilter</className>
+  <roleSource class="org.geoserver.security.oauth2.OpenIdConnectFilterConfig$OpenIdRoleSource">AccessToken</roleSource>
+  <cliendId>geoserver-fe</cliendId>
+  <clientSecret>FjzoqiFKPL0uDooLLiu9QQtHWTED46iO</clientSecret>
+  <accessTokenUri>https://curve02.roycegeo.com/realms/CURVE/protocol/openid-connect/token</accessTokenUri>
+  <userAuthorizationUri>https://curve02.roycegeo.com/realms/CURVE/protocol/openid-connect/auth</userAuthorizationUri>
+  <redirectUri>http://localhost:8080/geoserver/</redirectUri>
+  <checkTokenEndpointUrl>https://curve02.roycegeo.com/realms/CURVE/protocol/openid-connect/userinfo</checkTokenEndpointUrl>
+  <logoutUri>https://curve02.roycegeo.com/realms/CURVE/protocol/openid-connect/logout</logoutUri>
+  <scopes>openid acr profile email roles web-origins microprofile-jwt offline_access address phone</scopes>
+  <enableRedirectAuthenticationEntryPoint>false</enableRedirectAuthenticationEntryPoint>
+  <forceAccessTokenUriHttps>true</forceAccessTokenUriHttps>
+  <forceUserAuthorizationUriHttps>true</forceUserAuthorizationUriHttps>
+  <loginEndpoint>/j_spring_oauth2_openid_connect_login</loginEndpoint>
+  <logoutEndpoint>/j_spring_oauth2_openid_connect_logout</logoutEndpoint>
+  <allowUnSecureLogging>false</allowUnSecureLogging>
+  <principalKey>email</principalKey>
+  <jwkURI>https://curve02.roycegeo.com/realms/CURVE/protocol/openid-connect/certs</jwkURI>
+  <tokenRolesClaim>realm_access.role</tokenRolesClaim>
+  <postLogoutRedirectUri>http://localhost:8080/geoserver/</postLogoutRedirectUri>
+  <sendClientSecret>true</sendClientSecret>
+  <allowBearerTokens>true</allowBearerTokens>
+  <usePKCE>false</usePKCE>
+  <enforceTokenValidation>true</enforceTokenValidation>
+</openIdConnectAuthentication>
