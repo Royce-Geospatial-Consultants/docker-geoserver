@@ -206,6 +206,13 @@ if [[ ! -z ${COMMUNITY_EXTENSIONS} ]]; then
 
 fi
 
+## Create RoyceGeo Security Configuration
+echo "********** Installing Open ID Filter in '${GEOSERVER_DATA_DIR}' **********"
+create_dir "${GEOSERVER_DATA_DIR}"/security/filter/curve02-openid-connect
+cp /build_data/rg_config/config.xml "${GEOSERVER_DATA_DIR}"/security/filter/curve02-openid-connect
+echo "********** Installing Roles in '${GEOSERVER_DATA_DIR}' **********"
+cp /build_data/rg_config/roles.xml "${GEOSERVER_DATA_DIR}"/security/role/default/
+
 
 # Setup clustering
 set_vars
