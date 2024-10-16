@@ -128,6 +128,7 @@ COPY ./scenario_tests/utils/requirements.txt /lib/utils/requirements.txt
 RUN set -eux \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
+    && apt-get install -y vim \
     && apt-get -y --no-install-recommends install python3-pip procps \
     && apt-get -y --purge autoremove \
     && apt-get clean \
