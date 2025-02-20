@@ -116,6 +116,12 @@ RUN echo 'figlet -t "Kartoza Docker GeoServer"' >> ~/.bashrc
 
 WORKDIR ${GEOSERVER_HOME}
 
+#### SET UP FILES FOR ROYCE HELM GEOSERVER
+COPY ./resources/web.xml /settings/web.xml
+COPY ./resources/rest.properties /settings/rest.properties
+ADD ./resources/rastermask /settings/rastermask
+
+
 ENTRYPOINT ["/bin/bash", "/scripts/entrypoint.sh"]
 
 ##############################################################################
@@ -125,9 +131,12 @@ FROM geoserver-prod AS geoserver-test
 
 COPY ./scenario_tests/utils/requirements.txt /lib/utils/requirements.txt
 
+
+
 RUN set -eux \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
+    && apt-get install -y vim \
     && apt-get -y --no-install-recommends install python3-pip procps \
     && apt-get -y --purge autoremove \
     && apt-get clean \

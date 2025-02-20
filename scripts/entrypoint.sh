@@ -103,6 +103,9 @@ fi
 export JAVA_OPTS="${JAVA_OPTS} ${GEOSERVER_OPTS}"
 
 
+
+ 
+
 # Chown again - seems to fix issue with resolving all created directories
 if [[ ${RUN_AS_ROOT} =~ [Ff][Aa][Ll][Ss][Ee] ]];then
   dir_ownership=("${CATALINA_HOME}" /home/"${USER_NAME}"/ "${COMMUNITY_PLUGINS_DIR}"
