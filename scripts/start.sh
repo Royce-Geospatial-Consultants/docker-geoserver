@@ -211,6 +211,7 @@ install_plugin /community_plugins cog-google-plugin
 install_plugin /community_plugins s3-geotiff-plugin
 install_plugin /community_plugins sec-oauth2-openid-connect-plugin
 install_plugin /community_plugins libdeflate-plugin
+install_plugin /stable_plugins mongodb-plugin
 
 ## Create RoyceGeo Security Configuration
 echo "********** Copying Footprint Shapefiles' **********"
